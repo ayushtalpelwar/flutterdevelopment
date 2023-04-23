@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:thirty_days_of_flutter/widgets/drawer.dart';
+
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -7,9 +9,9 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar:AppBar(
-        title: Text("New App"),
+        title: Text("30 Days Of Flutter"),
       ),
-      drawer: Drawer(),
+      drawer: MyDrawer(),
       body: Center(
         child: Container(
           child: Text("Hi this is ayush"),
