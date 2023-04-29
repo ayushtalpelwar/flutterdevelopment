@@ -23,12 +23,16 @@ class _HomePageState extends State<HomePage> {
   }
 
   loadData() async{
+    await Future.delayed(Duration(seconds: 2));
     var catjson=await rootBundle.loadString("assets/files/catalog.json");
     var decodeddata=jsonDecode(catjson);
     var productsdata=decodeddata["products"];
+    catalogModel.items=List.from(productsdata).map<Item>((item) => Item.fromMap(item)).toList();
+    setState(() {});
   }
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
         title: Text("30 Days Of Flutter"),
